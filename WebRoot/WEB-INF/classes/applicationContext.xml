@@ -42,6 +42,7 @@
 		<property name="mappingResources">
 			<list>
 				<value>com/shop/user/vo/user.hbm.xml</value>
+				<value>com/shop/category/vo/Category.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -69,11 +70,16 @@
 	<bean id="userService" class="com.shop.user.service.UserService">
 		<property name="userDao" ref="userDao"/>
 	</bean>
+	<bean id="categoryService"clas="com.shop.category.service.CategoryService">
+		<property name="categoryDao" ref="categoryDao"/>
+	</bean>
 	<!-- Dao的配置  ===========================-->
 	<bean id="userDao" class="com.shop.user.dao.UserDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
-
+	<bean id="categoryDao" class="com.shop.category.dao.CategoryDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 
 
 	
