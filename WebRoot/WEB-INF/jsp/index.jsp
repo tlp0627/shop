@@ -1,4 +1,5 @@
 <%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s"%>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -13,7 +14,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <link href="${pageContext.request.contextPath}/css/slider.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/common.css" rel="stylesheet" type="text/css"/>
 <link href="${pageContext.request.contextPath}/css/index.css" rel="stylesheet" type="text/css"/>
-
 </head>
 <body>
 
@@ -42,36 +42,11 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 			<img src="${pageContext.request.contextPath}/image/a.jpg" width="260" height="343" alt="热门商品" title="热门商品">
 </div> -->
 						<ul class="tabContent" style="display: block;">
+							<s:iterator var="p" value="hList">
 									<li>
-										<a target="_blank"><img src="${pageContext.request.contextPath}/image/b.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/0ff130db-0a1b-4b8d-a918-ed9016317009-thumbnail.jpg" style="display: block;"></a>
+										<a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#p.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#p.image"/>" data-original="http://storage.shopxx.net/demo-image/3.0/201301/0ff130db-0a1b-4b8d-a918-ed9016317009-thumbnail.jpg" style="display: block;"></a>
 									</li>
-									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/c.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/51afeef5-f6cb-4936-abea-315cfca0edc0-thumbnail.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/d.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/e.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="${pageContext.request.contextPath}/image/f.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/g.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/h.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="${pageContext.request.contextPath}/image/i.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="${pageContext.request.contextPath}/image/i.jpg" style="display: block;"></a>
-									</li>
-									<li>
-										<a target="_blank"><img src="${pageContext.request.contextPath}/image/i.jpg" style="display: block;"></a>
-									</li>
+							</s:iterator>
 						</ul>
 						<ul class="tabContent" style="display: none;">
 									<li>

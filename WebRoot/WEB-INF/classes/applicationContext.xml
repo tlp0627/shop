@@ -43,6 +43,7 @@
 			<list>
 				<value>com/shop/user/vo/user.hbm.xml</value>
 				<value>com/shop/category/vo/Category.hbm.xml</value>
+				<value>com/shop/product/vo/Product.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -62,10 +63,14 @@
 	<!-- 首页访问的Action -->
 	<bean id="indexAction" class="com.shop.index.action.IndexAction" scope="prototype">
 		<property name="categoryService" ref ="categoryService" ></property>
+		<property name="productService" ref ="productService" ></property>
 	</bean>
 	<!-- 用户访问的Action -->
 	<bean id="userAction" class="com.shop.user.action.UserAction" scope="prototype">
 	<property name="userService" ref ="userService"></property>
+	</bean >
+	<bean id="productAction" class="com.shop.product.action.ProductAction" scope="prototype">
+		<property name="productAction" ref ="productAction"></property>
 	</bean>
 		<!-- Service的配置  ===========================-->
 	<bean id="userService" class="com.shop.user.service.UserService">
@@ -74,6 +79,9 @@
 	<bean id="categoryService" class="com.shop.category.service.CategoryService">
 		<property name="categoryDao" ref="categoryDao"/>
 	</bean>
+	<bean id="productService" class="com.shop.product.service.ProductService">
+		<property name="productDao" ref="productDao"></property>
+	</bean>
 	<!-- Dao的配置  ===========================-->
 	<bean id="userDao" class="com.shop.user.dao.UserDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
@@ -81,7 +89,9 @@
 	<bean id="categoryDao" class="com.shop.category.dao.CategoryDao">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
-
+	<bean id="productDao" class="com.shop.product.dao.ProductDao">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
 
 	
 </beans>
