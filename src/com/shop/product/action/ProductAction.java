@@ -6,14 +6,19 @@ import com.shop.product.service.ProductService;
 import com.shop.product.vo.Product;
 
 public class ProductAction extends ActionSupport implements ModelDriven<Product> {
-	private Product produt;
+	private Product produt=new Product();
 	public Product getModel() {
-		// TODO Auto-generated method stub
 		return this.produt;
 	}
 	private ProductService productService;
 	public void setProductService(ProductService productService) {
 		this.productService = productService;
+	}
+	
+	public String findByPid(){
+		//System.out.println(produt.getPid());
+		produt = productService.findByPid(produt.getPid());
+		return "productPage";
 	}
 	
 

@@ -15,5 +15,13 @@ public class ProductService {
 	public List<Product> getHotProducts() {
 		return productDao.getHotProducts();
 	}
+
+	public List<Product> FindNewProducts() {
+		return productDao.FinNewProducts();
+	}
+
+	public Product findByPid(Integer pid) {
+		return productDao.findByPid(pid);
+	}
 	
 }

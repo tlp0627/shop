@@ -10,7 +10,6 @@ import com.shop.category.service.CategoryService;
 import com.shop.category.vo.Category;
 import com.shop.product.service.ProductService;
 import com.shop.product.vo.Product;
-
 public class IndexAction extends ActionSupport {
 
 
@@ -28,18 +27,15 @@ public class IndexAction extends ActionSupport {
 	 * 执行的访问方法
 	 */
 	public String execute(){
+		//查询所有商品
 		List <Category> cList = categoryService.getCategoryAll();
 		ActionContext.getContext().getSession().put("cList", cList);
-		
+		//查询热门商品
 		List <Product> hList = productService.getHotProducts();
-		Iterator<Product> iterator = hList.iterator();
-		while (iterator.hasNext()) {
-			Product product=iterator.next();
-			System.out.println(product.getImage());
-			
-		}
-		//System.out.println(hotProducts==null);
 		ActionContext.getContext().getValueStack().set("hList", hList);
+		//查询最新商品
+		List <Product> nList = productService.FindNewProducts();
+		ActionContext.getContext().getValueStack().set("nList", nList);
 		return "index";
 	}
 	

@@ -15,8 +15,24 @@ public class ProductDao extends HibernateDaoSupport {
 		DetachedCriteria criteria = DetachedCriteria.forClass(Product.class);
 		criteria.add(Restrictions.eq("is_hot", 1));
 		criteria.addOrder(Order.desc("pdesc"));
-		List list = this.getHibernateTemplate().findByCriteria(criteria, 1, 10);
+		List  list = this.getHibernateTemplate().findByCriteria(criteria, 1, 10);
 		return list;
+	}
+
+	public List<Product> FinNewProducts() {
+			DetachedCriteria criteria =DetachedCriteria.forClass(Product.class);
+			criteria.addOrder(Order.desc("pdesc"));
+			List  list = this.getHibernateTemplate().findByCriteria(criteria, 1, 10);
+		return list;
+	}
+
+	public Product findByPid(Integer pid) {
+		String hql="from Product where pid=?";
+		List <Product> list = this.getHibernateTemplate().find(hql,pid);
+		if(list !=null && list.size()>0){
+			return list.get(0);
+		}
+		return null;
 	}
 
 }

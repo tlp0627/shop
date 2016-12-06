@@ -16,6 +16,7 @@
 		<action name="index" class="indexAction">
 			<result name="index">/WEB-INF/jsp/index.jsp</result>
 		</action>
+		<!-- 配置用户的Action -->
 		<action name="User_*" class="userAction" method="{1}">
 			<result name="registPage">/WEB-INF/jsp/regist.jsp</result>
 			<result name="input">/WEB-INF/jsp/regist.jsp</result>
@@ -25,6 +26,10 @@
 			<result name="checkcodeFail">/WEB-INF/jsp/regist.jsp</result>
 		</action>
 		<action name="checkImgAction" class="checkImgAction">
+		</action>
+		<!-- 配置商品的Action -->
+		<action name="product_*" class="productAction" method="{1}">
+			<result name="productPage">/WEB-INF/jsp/product.jsp</result>
 		</action>
 	</package>
 </struts>

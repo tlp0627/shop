@@ -124,31 +124,13 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 						</div>
 						 -->						
 						 <ul class="tabContent" style="display: block;">
+							<s:iterator var="n" value="nList">
 									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/l.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/4a51167a-89d5-4710-aca2-7c76edc355b8-thumbnail.jpg" style="display: block;"></a>									</li>
-									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/m.jpg" style="display: block;"></a>									</li>
-									
-									<li>
-										<a target="_blank"><img src="${pageContext.request.contextPath}/image/n.jpg" style="display: block;"></a>									</li>
-									<li>
-										<a target="_blank"><img src="${pageContext.request.contextPath}/image/o.jpg" style="display: block;"></a>									</li>
-									<li>
-										<a target="_blank"><img src="${pageContext.request.contextPath}/image/p.jpg" style="display: block;"></a>									</li>
-									<li>
-										<a target="_blank"><img src="${pageContext.request.contextPath}/image/m.jpg" style="display: block;"></a>									</li>
-									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/15.jpg" style="display: block;"></a>
-									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/l.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/b499fb5e-999f-431b-a375-172ee09e4a3e-thumbnail.jpg" style="display: block;" /></a>
+										<a href="${ pageContext.request.contextPath }/product_findByPid.action?pid=<s:property value="#n.pid"/>" target="_blank"><img src="${pageContext.request.contextPath}/<s:property value="#n.image"/>" data-original="http://storage.shopxx.net/demo-image/3.0/201301/0ff130db-0a1b-4b8d-a918-ed9016317009-thumbnail.jpg" style="display: block;"></a>
 									</li>
-									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/l.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/b499fb5e-999f-431b-a375-172ee09e4a3e-thumbnail.jpg" style="display: block;" /></a>
-									</li>
-									<li>
-										<a  target="_blank"><img src="${pageContext.request.contextPath}/image/l.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/b499fb5e-999f-431b-a375-172ee09e4a3e-thumbnail.jpg" style="display: block;" /></a>
-									</li>
+							</s:iterator>
 						</ul>
+
 						<ul class="tabContent" style="display: none;">
 									<li>
 										<a  target="_blank"><img src="./Mango商城 - Powered By Mango Team_files/b04a22f5-267d-4e33-ac58-dda941eeaf84-thumbnail.jpg" data-original="http://storage.shopxx.net/demo-image/3.0/201301/b04a22f5-267d-4e33-ac58-dda941eeaf84-thumbnail.jpg" style="display: block;"></a>

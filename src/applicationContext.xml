@@ -44,6 +44,7 @@
 				<value>com/shop/user/vo/user.hbm.xml</value>
 				<value>com/shop/category/vo/Category.hbm.xml</value>
 				<value>com/shop/product/vo/Product.hbm.xml</value>
+				<value>com/shop/categorysecond/vo/CategorySecond.hbm.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -69,8 +70,9 @@
 	<bean id="userAction" class="com.shop.user.action.UserAction" scope="prototype">
 	<property name="userService" ref ="userService"></property>
 	</bean >
+	<!-- 商品的Action -->
 	<bean id="productAction" class="com.shop.product.action.ProductAction" scope="prototype">
-		<property name="productAction" ref ="productAction"></property>
+		<property name="productService" ref ="productService"></property>
 	</bean>
 		<!-- Service的配置  ===========================-->
 	<bean id="userService" class="com.shop.user.service.UserService">
