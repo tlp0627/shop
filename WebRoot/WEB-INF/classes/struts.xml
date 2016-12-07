@@ -16,7 +16,7 @@
 		<action name="index" class="indexAction">
 			<result name="index">/WEB-INF/jsp/index.jsp</result>
 		</action>
-		<!-- 配置用户的Action -->
+		<!-- 配置注册的Action -->
 		<action name="User_*" class="userAction" method="{1}">
 			<result name="registPage">/WEB-INF/jsp/regist.jsp</result>
 			<result name="input">/WEB-INF/jsp/regist.jsp</result>
@@ -25,6 +25,7 @@
 			<result name="quit" type="redirectAction">index</result>
 			<result name="checkcodeFail">/WEB-INF/jsp/regist.jsp</result>
 		</action>
+		<!-- 配置验证码的Action -->
 		<action name="checkImgAction" class="checkImgAction">
 		</action>
 		<!-- 配置商品的Action -->

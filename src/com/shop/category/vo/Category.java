@@ -2,7 +2,9 @@ package com.shop.category.vo;
 
 import java.util.Set;
 
+
 import com.shop.categorysecond.vo.CategorySecond;
+
 
 /*
  * CREATE TABLE `category` (
@@ -15,12 +17,13 @@ import com.shop.categorysecond.vo.CategorySecond;
 public class Category {
 	private Integer cid;
 	private String cname;
-	Set <CategorySecond> CategroySeconds;
+
+	private Set <CategorySecond> categroySeconds;
 	public Set<CategorySecond> getCategroySeconds() {
-		return CategroySeconds;
+		return categroySeconds;
 	}
 	public void setCategroySeconds(Set<CategorySecond> categroySeconds) {
-		CategroySeconds = categroySeconds;
+		this.categroySeconds = categroySeconds;
 	}
 	public Integer getCid() {
 		return cid;

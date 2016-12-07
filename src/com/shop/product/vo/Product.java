@@ -2,6 +2,8 @@ package com.shop.product.vo;
 
 import java.util.Date;
 
+import com.shop.categorysecond.vo.CategorySecond;
+
 /*
  * 
  *   
@@ -27,6 +29,14 @@ public class Product {
 	private String image;
 	private String pdesc;
 	private Integer is_hot;
+	private CategorySecond categorySecond;
+
+	public CategorySecond getCategorySecond() {
+		return categorySecond;
+	}
+	public void setCategorySecond(CategorySecond categorySecond) {
+		this.categorySecond = categorySecond;
+	}
 	public Integer getPid() {
 		return pid;
 	}

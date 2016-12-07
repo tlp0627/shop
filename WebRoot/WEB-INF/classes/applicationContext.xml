@@ -43,8 +43,8 @@
 			<list>
 				<value>com/shop/user/vo/user.hbm.xml</value>
 				<value>com/shop/category/vo/Category.hbm.xml</value>
-				<value>com/shop/product/vo/Product.hbm.xml</value>
 				<value>com/shop/categorysecond/vo/CategorySecond.hbm.xml</value>
+				<value>com/shop/product/vo/Product.hbm.xml</value>
 			</list>
 		</property>
 	</bean>

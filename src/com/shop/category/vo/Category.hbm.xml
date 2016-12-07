@@ -11,6 +11,7 @@
 	<set name="CategroySeconds" lazy="false">
 		<key column="cid"></key>
 		<one-to-many class="com.shop.categorysecond.vo.CategorySecond"/>
+
 	</set>
 	</class>
 </hibernate-mapping>

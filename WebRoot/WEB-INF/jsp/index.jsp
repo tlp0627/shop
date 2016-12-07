@@ -38,9 +38,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 								<a target="_blank"></a>
 							</li>
 					</ul>
-<!-- 					<div class="hotProductAd">
-			<img src="${pageContext.request.contextPath}/image/a.jpg" width="260" height="343" alt="热门商品" title="热门商品">
-</div> -->
+
 						<ul class="tabContent" style="display: block;">
 							<s:iterator var="p" value="hList">
 									<li>
@@ -118,11 +116,9 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 							<li>
 								<a target="_blank"></a>
 							</li>
+
 					</ul>
-<!-- 					<div class="newProductAd">
-									<img src="${pageContext.request.contextPath}/image/q.jpg" width="260" height="343" alt="最新商品" title="最新商品">
-						</div>
-						 -->						
+						
 						 <ul class="tabContent" style="display: block;">
 							<s:iterator var="n" value="nList">
 									<li>

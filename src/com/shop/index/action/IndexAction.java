@@ -35,6 +35,7 @@ public class IndexAction extends ActionSupport {
 		ActionContext.getContext().getValueStack().set("hList", hList);
 		//查询最新商品
 		List <Product> nList = productService.FindNewProducts();
+
 		ActionContext.getContext().getValueStack().set("nList", nList);
 		return "index";
 	}
