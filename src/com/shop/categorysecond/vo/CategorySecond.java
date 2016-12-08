@@ -28,11 +28,13 @@ public class CategorySecond {
 	public void setCsname(String csname) {
 		this.csname = csname;
 	}
-	public Category getCatgegory() {
-		return catgegory;
+
+	private Category category;
+
+	public Category getCategory() {
+		return category;
 	}
-	public void setCatgegory(Category catgegory) {
-		this.catgegory = catgegory;
+	public void setCategory(Category category) {
+		this.category = category;
 	}
-	private Category catgegory;
 }
