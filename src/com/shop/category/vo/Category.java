@@ -18,12 +18,12 @@ public class Category {
 	private Integer cid;
 	private String cname;
 
-	private Set <CategorySecond> categroySeconds;
-	public Set<CategorySecond> getCategroySeconds() {
-		return categroySeconds;
+	private Set <CategorySecond> categorySeconds;
+	public Set<CategorySecond> getCategorySeconds() {
+		return categorySeconds;
 	}
-	public void setCategroySeconds(Set<CategorySecond> categroySeconds) {
-		this.categroySeconds = categroySeconds;
+	public void setCategorySeconds(Set<CategorySecond> categorySeconds) {
+		this.categorySeconds = categorySeconds;
 	}
 	public Integer getCid() {
 		return cid;
