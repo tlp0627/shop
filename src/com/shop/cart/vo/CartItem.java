@@ -1,8 +1,10 @@
 package com.shop.cart.vo;
 
+import java.io.Serializable;
+
 import com.shop.product.vo.Product;
 
-public class CartItem {
+public class CartItem implements Serializable {
 	private Product product;
 	private int count;
 	private double subtotal;

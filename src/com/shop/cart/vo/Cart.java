@@ -1,13 +1,17 @@
 package com.shop.cart.vo;
 
+import java.io.Serializable;
 import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
 import com.shop.product.vo.Product;
 
-public class Cart {
+public class Cart implements Serializable {
 	private double total;//总计
+	public double getTotal() {
+		return total;
+	}
 	//用于存储购物项，Map是为了方便取
 	private Map<Integer, CartItem> map = new LinkedHashMap<Integer, CartItem>();
 	
@@ -21,17 +25,24 @@ public class Cart {
 		}
 		//如果map中未包含的情况
 		else {
-			map.put(cartItem.getProduct().getPid(), cartItem);
+			map.put(pid, cartItem);
 		}
+		total += cartItem.getSubtotal();
 	}
-	public Collection<CartItem>  getCartItema (){
+	public void delCart(Integer pid){
+		CartItem cartItem = map.remove(pid);
+		total -= cartItem.getSubtotal();
+	}
+	public Collection<CartItem>  getCartItems (){
 		return map.values();
 	}
-	public double getTotal() {
-		return total;
-	}
+
 	public void setTotal(double total) {
 		this.total = total;
 	}
-
+	//清空购物车
+	public void clearCart(){
+		map.clear();
+		total = 0;
+	}
 }

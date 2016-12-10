@@ -74,6 +74,10 @@
 	<bean id="productAction" class="com.shop.product.action.ProductAction" scope="prototype">
 		<property name="productService" ref ="productService"></property>
 	</bean>
+	<!-- 购物车的Action -->
+	<bean id="cartAction" class="com.shop.cart.action.CartAction" scope="prototype">
+		<property name="productService" ref ="productService"></property>
+	</bean>
 		<!-- Service的配置  ===========================-->
 	<bean id="userService" class="com.shop.user.service.UserService">
 		<property name="userDao" ref="userDao"/>
