@@ -30,6 +30,13 @@ public class OrderItem {
 	private Integer count;
 	private Double subtotal;
 	private Product product;
+	private Order orders;
+	public Order getOrders() {
+		return orders;
+	}
+	public void setOrders(Order orders) {
+		this.orders = orders;
+	}
 	public Integer getItemid() {
 		return itemid;
 	}

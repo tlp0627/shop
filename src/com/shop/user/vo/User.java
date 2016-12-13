@@ -1,4 +1,9 @@
 package com.shop.user.vo;
+
+import java.util.Set;
+
+import com.shop.order.vo.Order;
+
 /**
  * 
  *
@@ -25,6 +30,13 @@ public class User {
 	private String addr;
 	private Integer state;
 	private String code;
+	private Set <Order> orders;
+	public Set<Order> getOrders() {
+		return orders;
+	}
+	public void setOrders(Set<Order> orders) {
+		this.orders = orders;
+	}
 	public Integer getUid() {
 		return uid;
 	}

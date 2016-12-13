@@ -3,19 +3,15 @@
     "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-	<class name="com.shop.user.vo.User" table="user">
-	<id name="uid">
+	<class name="com.shop.order.vo.OrderItem" table="orderitem">
+	<id name="itemid">
 			<generator class="native"/>
 		</id>
-		<property name="username"/>
-		<property name="password"/>
-		<property name="name"/>
-		<property name="email"/>
-		<property name="phone"/>
-		<property name="addr"/>
-		<property name="state"/>
-		<property name="code"/>
-		<set name="orders">
+		<property name="count"/>
+		<property name="subtotal"/>
+		<property name="product"/>
+		<property name="orders"/>
+		
 		<key column="uid"/>
 		<one-to-many class="com.shop.order.vo.Order"/>
 		</set>

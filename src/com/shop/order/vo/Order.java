@@ -1,6 +1,7 @@
 package com.shop.order.vo;
 
 import java.util.Date;
+import java.util.Set;
 
 import com.shop.user.vo.User;
 /*
@@ -27,6 +28,13 @@ public class Order {
 	private String addr;
 	private String phone;
 	private User user;
+	private Set <OrderItem> orderItems;
+	public Set<OrderItem> getOrderItems() {
+		return orderItems;
+	}
+	public void setOrderItems(Set<OrderItem> orderItems) {
+		this.orderItems = orderItems;
+	}
 	public Integer getOid() {
 		return oid;
 	}

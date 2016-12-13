@@ -15,5 +15,9 @@
 		<property name="addr"/>
 		<property name="state"/>
 		<property name="code"/>
+		<set name="orders">
+		<key column="uid"/>
+		<one-to-many class="com.shop.order.vo.Order"/>
+		</set>
 	</class>
 </hibernate-mapping>
