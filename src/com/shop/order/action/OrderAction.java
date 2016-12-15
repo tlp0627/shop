@@ -40,7 +40,10 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		order.setAddr(existUser.getAddr());
 		order.setPhone(existUser.getPhone());
 		for(CartItem cartItem : cart.getCartItems()){
-			OrderItem orderItem = 
+			OrderItem orderItem = new OrderItem();
+			orderItem.setCount(cartItem.getCount());
+			orderItem.setProduct(product);
+			
 		}
 		return "saveOrder";
 	}
