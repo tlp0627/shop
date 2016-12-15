@@ -9,11 +9,7 @@
 		</id>
 		<property name="count"/>
 		<property name="subtotal"/>
-		<property name="product"/>
-		<property name="orders"/>
-		
-		<key column="uid"/>
-		<one-to-many class="com.shop.order.vo.Order"/>
-		</set>
+		<many-to-one name="product" lazy="false"  class="com.shop.product.vo.Product" column="pid"></many-to-one>
+		<many-to-one name="orders" class="com.shop.order.vo.OrderItem" column="oid"></many-to-one>
 	</class>
 </hibernate-mapping>

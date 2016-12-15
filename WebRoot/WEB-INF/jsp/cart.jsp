@@ -67,8 +67,8 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 					商品金额: <strong id="effectivePrice">￥<s:property value="#session.cart.total"/>元</strong>
 				</div>
 				<div class="bottom">
-					<a href="${pageContext.request.contextPath}/cart_clearCart?" id="clear" class="clear">清空购物车</a>
-					<a href="./会员登录.htm" id="submit" class="submit">提交订单</a>
+					<a href="${pageContext.request.contextPath}/cart_clearCart.action?" id="clear" class="clear">清空购物车</a>
+					<a href="${pageContext.request.contextPath}/order_saveOrder.action" id="submit" class="submit">提交订单</a>
 				</div>
 		</div>
 	</div>

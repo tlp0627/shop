@@ -40,5 +40,9 @@
 			<result name="clearCart">/WEB-INF/jsp/cart.jsp</result>
 			<result name="myCart">/WEB-INF/jsp/cart.jsp</result>
 		</action>
+				<!-- 配置订单的Action -->
+		<action name="order_*" class="orderAction" method="{1}">
+			<result name="saveOrder">/WEB-INF/jsp/order.jsp</result>
+		</action>
 	</package>
 </struts>
