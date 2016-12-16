@@ -1,6 +1,7 @@
 package com.shop.order.vo;
 
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 import com.shop.user.vo.User;
@@ -28,7 +29,7 @@ public class Order {
 	private String addr;
 	private String phone;
 	private User user;
-	private Set <OrderItem> orderItems;
+	private Set <OrderItem> orderItems = new HashSet<OrderItem>();
 	public Set<OrderItem> getOrderItems() {
 		return orderItems;
 	}

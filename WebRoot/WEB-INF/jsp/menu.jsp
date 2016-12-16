@@ -50,7 +50,7 @@
 			</ul>
 		</div>
 		<div class="cart">
-			<a  href="./购物车.htm">购物车</a>
+			<a href="${ pageContext.request.contextPath }/cart_myCart.action">购物车</a>
 		</div>
 			<div class="phone">
 				客服热线:
@@ -60,7 +60,7 @@
 	<div class="span24">
 		<ul class="mainNav">
 					<li>
-						<a href="./index.htm">首页</a>
+						<a href="${pageContext.request.contextPath}/index.action }>首页</a>
 						|
 					</li>
 					<s:iterator var="c" value="#session.cList">

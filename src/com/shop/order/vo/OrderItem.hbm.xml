@@ -10,6 +10,6 @@
 		<property name="count"/>
 		<property name="subtotal"/>
 		<many-to-one name="product" lazy="false"  class="com.shop.product.vo.Product" column="pid"></many-to-one>
-		<many-to-one name="orders" class="com.shop.order.vo.OrderItem" column="oid"></many-to-one>
+		<many-to-one name="order" class="com.shop.order.vo.Order" column="oid"></many-to-one>
 	</class>
 </hibernate-mapping>

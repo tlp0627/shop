@@ -13,10 +13,10 @@
 	<property name="name"></property>
 	<property name="addr"></property>
 	<property name="phone"></property>
-	<set name="orderItems" lazy="false">
+	<many-to-one name="user"  class="com.shop.user.vo.User" column="uid"></many-to-one>
+	<set name="orderItems" lazy="false" cascade="save-update">
 		<key column="oid"></key>
 		<one-to-many class="com.shop.order.vo.OrderItem"/>
 	</set>
-	<many-to-one name="user" class="com.shop.user.vo.User" column="uid"></many-to-one>
 	</class>
 </hibernate-mapping>

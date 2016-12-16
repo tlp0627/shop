@@ -39,12 +39,17 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		order.setName(existUser.getName());
 		order.setAddr(existUser.getAddr());
 		order.setPhone(existUser.getPhone());
+		order.setUser(existUser);
 		for(CartItem cartItem : cart.getCartItems()){
 			OrderItem orderItem = new OrderItem();
 			orderItem.setCount(cartItem.getCount());
-			orderItem.setProduct(product);
-			
+			orderItem.setProduct(cartItem.getProduct());
+			orderItem.setSubtotal(cartItem.getSubtotal());
+			orderItem.setOrder(order);
+			order.getOrderItems().add(orderItem);
 		}
+		orderService.save(order);
+		cart.clearCart();
 		return "saveOrder";
 	}
 	
