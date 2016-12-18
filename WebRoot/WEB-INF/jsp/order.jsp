@@ -14,19 +14,7 @@
 </head>
 <body>
 
-<div class="container header">
-	<div class="span5">
-		<div class="logo">
-			<a href="./网上商城/index.htm">
-				<img src="${pageContext.request.contextPath}/image/r___________renleipic_01/logo.gif" alt="传智播客"/>
-			</a>
-		</div>
-	</div>
-	<div class="span9">
-<div class="headerAd">
-	<img src="${pageContext.request.contextPath}/image/header.jpg" width="320" height="50" alt="正品保障" title="正品保障"/>
-</div>	
-</div>
+
 	
 	<%@ include file="menu.jsp" %>
 	

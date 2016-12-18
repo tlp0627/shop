@@ -4,6 +4,7 @@ import java.util.Date;
 
 import org.apache.struts2.ServletActionContext;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
 import com.opensymphony.xwork2.ModelDriven;
 import com.shop.cart.vo.Cart;
@@ -12,10 +13,15 @@ import com.shop.order.service.OrderService;
 import com.shop.order.vo.Order;
 import com.shop.order.vo.OrderItem;
 import com.shop.user.vo.User;
+import com.utlis.PageBean;
 
 public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 	private OrderService orderService;
 	private Order order = new Order();
+	private Integer page;
+	public void setPage(Integer page) {
+		this.page = page;
+	}
 	public void setOrderService(OrderService orderService) {
 		this.orderService = orderService;
 	}
@@ -52,5 +58,14 @@ public class OrderAction extends ActionSupport implements ModelDriven<Order> {
 		cart.clearCart();
 		return "saveOrder";
 	}
-	
+	public String findByUid(){
+		User existUser = (User) ServletActionContext.getRequest().getSession().getAttribute("existUser");
+		PageBean <Order> pageBean = orderService.findByPageUid(existUser.getUid(),page);
+		ActionContext.getContext().getValueStack().set("pageBean", pageBean);
+		return "findByUid";
+	}
+	public String  findByOid(){
+		order = orderService.findByOid(order.getOid());
+		return "findByOid";
+	}
 }

@@ -4,13 +4,11 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping >
 	<class name="com.shop.category.vo.Category" table="category">
-	<id name="cid">
+	<id name="uid">
 	<generator class="native"></generator>
 	</id>
-	<property name="cname"></property>
-	<set name="categorySeconds" lazy="false">
-		<key column="cid"></key>
-		<one-to-many class="com.shop.categorysecond.vo.CategorySecond"/>
-	</set>
+	<property name="username"></property>
+	<property name="password"></property>
+	
 	</class>
 </hibernate-mapping>

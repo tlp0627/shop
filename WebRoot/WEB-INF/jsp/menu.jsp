@@ -29,7 +29,7 @@
 				<s:property value="#session.existUser.name"/>
 				|</li>
 			<li id="headerLogin" class="headerLogin" style="display: list-item;">
-				<a href="#">我的订单</a>
+				<a href="${pageContext.request.contextPath}/order_findByUid.action?page=1">我的订单</a>
 			|</li>
 			<li id="headerRegister" class="headerRegister"
 				style="display: list-item;"><a href="${ pageContext.request.contextPath }/User_quit.action">退出</a>|
@@ -60,7 +60,7 @@
 	<div class="span24">
 		<ul class="mainNav">
 					<li>
-						<a href="${pageContext.request.contextPath}/index.action }>首页</a>
+						<a href="${pageContext.request.contextPath}/index.action">首页</a>
 						|
 					</li>
 					<s:iterator var="c" value="#session.cList">
