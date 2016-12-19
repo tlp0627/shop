@@ -74,7 +74,7 @@
 	<property name="userService" ref ="userService"></property>
 	</bean >
 	<!-- 管理员访问的Action -->
-	<bean id="userAction" class="com.shop.AdminUser.action.AdminUserAction" scope="prototype">
+	<bean id="adminUserAction" class="com.shop.AdminUser.action.AdminUserAction" scope="prototype">
 	<property name="adminUserService" ref ="adminUserService"></property>
 	</bean >
 	<!-- 商品的Action -->
