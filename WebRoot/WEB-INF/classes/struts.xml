@@ -8,10 +8,11 @@
     <constant name="struts.devMode" value="ture" />
 
 	<package name="shop" extends="struts-default" namespace="/">
-	<!-- 配置自定义拦截器 -->
+	<!-- 配置自定义拦截器
 		<interceptors>
 			<interceptor name="privilegeInterceptor" class="com.shop.interceptor.PrivilegeInterceptor"/>
 		</interceptors>
+		 -->
 	<!-- 全局信息-->
 		<global-results>
 			<result name="msg">/WEB-INF/jsp/msg.jsp</result>
@@ -25,9 +26,13 @@
 		<action name="adminUser_*" class="adminUserAction" method="{1}">
 			<result name="loginFail">/admin/index.jsp</result>
 			<result name="loginSuccess" type="redirect">/admin/home.jsp</result>
-			<interceptor-ref name="privilegeInterceptor">
+			<!-- <interceptor-ref name="privilegeInterceptor">
 				<param name="excludeMethods">login</param>
-			</interceptor-ref>
+			</interceptor-ref>-->
+		</action>
+		<!-- 配置管理员一级分类管理的Action -->
+		<action name="adminCategory_*" class="adminCategoryAction" method="{1}">
+			<result name="findAll">/admin/category/list.jsp</result>
 		</action>
 		<!-- 配置注册的Action -->
 		<action name="User_*" class="userAction" method="{1}">

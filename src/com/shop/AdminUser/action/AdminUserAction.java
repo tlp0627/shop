@@ -24,6 +24,7 @@ public class AdminUserAction extends ActionSupport implements ModelDriven<AdminU
 	//首页跳转
 	public String login(){
 		AdminUser existAdminUser = adminUserService.login(adminUser);
+		//System.out.println(adminUser.getUsername()+"________"+adminUser.getPassword());
 		if (existAdminUser == null) {
 			// 用户名或密码错误
 			this.addActionError("用户名或密码错误!");

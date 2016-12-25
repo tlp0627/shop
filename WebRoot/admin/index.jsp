@@ -17,7 +17,7 @@ body {
 </head>
 <body style="background: #278296">
 <center><s:actionerror /></center>
-<form method="post" action="${pageContext.request.contextPath }/adminUser_login.action" target="_parent" name='theForm' onsubmit="return validate()">
+<form method="post" action="${pageContext.request.contextPath }/adminUser_login.action" target="_parent" name='theForm' >
   <table cellspacing="0" cellpadding="0" style="margin-top: 100px" align="center">
   <tr>
     <td style="padding-left: 50px">
@@ -55,7 +55,7 @@ body {
     }
     return validator.passed();
   }
-  
+  -->
 //-->
 </script>
 </body>

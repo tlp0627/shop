@@ -89,6 +89,10 @@
 	<bean id="orderAction" class="com.shop.order.action.OrderAction" scope="prototype">
 		<property name="orderService" ref ="orderService"></property>
 	</bean>
+	<!-- Admin一级分类的Action -->
+	<bean id="adminCategoryAction" class="com.shop.category.adminaction.AdminCategoryAction" scope="prototype">
+		<property name="categoryService" ref="categoryService"/>
+	</bean>
 		<!-- Service的配置  ===========================-->
 	<bean id="userService" class="com.shop.user.service.UserService">
 		<property name="userDao" ref="userDao"/>
