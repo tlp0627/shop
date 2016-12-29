@@ -4,7 +4,9 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
     <hibernate-mapping>
     	<class name="com.shop.product.vo.Product" table="product">
-    	<id name="pid"></id>
+    	<id name="pid">
+    	<generator class="native"/>
+    	</id>
     	<property name="pname"></property>
     	<property name="market_price"></property>
     	<property name="shop_price"></property>

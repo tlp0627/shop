@@ -38,5 +38,18 @@ public class CategorySecondDao extends HibernateDaoSupport {
 	public void update(CategorySecond categorySecond) {
 		this.getHibernateTemplate().update(categorySecond);
 	}
+
+	public void delete(CategorySecond categorySecond) {
+		this.getHibernateTemplate().delete(categorySecond);
+	}
+
+	public List<CategorySecond> findAll() {
+		String hql = "from CategorySecond";
+		List<CategorySecond> list = this.getHibernateTemplate().find(hql);
+		if(list !=null && list.size() > 0){
+			return  list;
+		}
+		return null;
+	}
 	
 }

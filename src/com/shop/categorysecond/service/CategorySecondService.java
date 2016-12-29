@@ -46,4 +46,12 @@ public class CategorySecondService {
 	public void update(CategorySecond categorySecond) {
 		categorySecondDao.update(categorySecond);
 	}
+
+	public void delete(CategorySecond categorySecond) {
+		categorySecondDao.delete(categorySecond);
+	}
+
+	public List<CategorySecond> findAll() {
+		return categorySecondDao.findAll();
+	}
 }

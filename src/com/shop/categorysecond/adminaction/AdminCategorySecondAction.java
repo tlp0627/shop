@@ -15,6 +15,11 @@ public class AdminCategorySecondAction extends ActionSupport implements ModelDri
 	private CategorySecondService categorySecondService;
 	private CategoryService categoryService;
 	
+	public void setCategoryService(CategoryService categoryService) {
+		this.categoryService = categoryService;
+	}
+
+
 	public void setCategorySecond(CategorySecond categorySecond) {
 		this.categorySecond = categorySecond;
 	}
@@ -58,5 +63,10 @@ public class AdminCategorySecondAction extends ActionSupport implements ModelDri
 	public String update() {
 		categorySecondService.update(categorySecond);
 		return "updateSuccess";
+	}
+	public String delete(){
+		categorySecond = categorySecondService.finByCsid(categorySecond.getCsid());
+		categorySecondService.delete(categorySecond);
+		return "deleteSuccess";
 	}
 }

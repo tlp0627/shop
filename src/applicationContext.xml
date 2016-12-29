@@ -98,6 +98,15 @@
 		<property name="categorySecondService" ref="categorySecondService"/>
 		<property name="categoryService" ref="categoryService"/>
 	</bean>
+	<!-- Admin商品的Action -->
+	<bean id="adminProductAction" class="com.shop.product.adminaction.AdminProductAction" scope="prototype">
+		<property name="productService" ref="productService"/>
+		<property name="categorySecondService" ref="categorySecondService"/>
+	</bean>
+	<!-- Admin订单的Action -->
+	<bean id="adminOrderAction" class="com.shop.order.adminaction.AdminOrderAction" scope="prototype">
+		<property name="orderService" ref="orderService"/>
+	</bean>
 		<!-- Service的配置  ===========================-->
 	<bean id="userService" class="com.shop.user.service.UserService">
 		<property name="userDao" ref="userDao"/>
