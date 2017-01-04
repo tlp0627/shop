@@ -1,6 +1,7 @@
 package com.shop.categorysecond.adminaction;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -56,10 +57,11 @@ public class AdminCategorySecondAction extends ActionSupport implements ModelDri
 	public String findAll2() throws IOException{
 		List<CategorySecond> list = categorySecondService.findAll();
 		String str = 	
-			"{\"csid\":\"1\",\"csname\":\"asdas\"}";
+			"[{\"csid\":\"1\",\"csname\":\"asdas\"}]";
 		
 		//JSONArray jsonArray = JSONArray.fromObject(list);
 		//String str =jsonArray.toString();
+	
 		HttpServletResponse response = ServletActionContext.getResponse();
         response.setContentType("text/json");
         response.setCharacterEncoding("utf-8");
@@ -67,6 +69,10 @@ public class AdminCategorySecondAction extends ActionSupport implements ModelDri
         response.getWriter().write(str);
         response.getWriter().close();
 		
+		/*PrintWriter out = ServletActionContext.getResponse().getWriter();
+		out.print(str);
+		out.flush(); 
+		out.close();*/
 		System.out.println(str);
 		return "findAll2";
 	}
