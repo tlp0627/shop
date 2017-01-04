@@ -1,6 +1,14 @@
 package com.shop.categorysecond.adminaction;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.servlet.http.HttpServletResponse;
+
+import net.sf.json.JSONArray;
+
+import org.apache.struts2.ServletActionContext;
 
 import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ActionSupport;
@@ -44,6 +52,23 @@ public class AdminCategorySecondAction extends ActionSupport implements ModelDri
 		PageBean <CategorySecond> pageBean = categorySecondService.findByPage(page);
 		ActionContext.getContext().getValueStack().set("pageBean", pageBean);
 		return "findAll";
+	}
+	public String findAll2() throws IOException{
+		List<CategorySecond> list = categorySecondService.findAll();
+		String str = 	
+			"{\"csid\":\"1\",\"csname\":\"asdas\"}";
+		
+		//JSONArray jsonArray = JSONArray.fromObject(list);
+		//String str =jsonArray.toString();
+		HttpServletResponse response = ServletActionContext.getResponse();
+        response.setContentType("text/json");
+        response.setCharacterEncoding("utf-8");
+        response.setHeader("Cache-Control", "no-cache");
+        response.getWriter().write(str);
+        response.getWriter().close();
+		
+		System.out.println(str);
+		return "findAll2";
 	}
 	public String addPage(){
 		List <Category> cList = categoryService.getCategoryAll();

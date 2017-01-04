@@ -41,6 +41,7 @@
 		<!-- 配置管理员二级分类管理的Action -->
 		<action name="adminCategorySecond_*" class="adminCategorySecondAction" method="{1}">
 			<result name="findAll">/admin/categorysecond/list.jsp</result>
+			<result name="findAll2">/index.jsp</result>
 			<result name="addPage">/admin/categorysecond/add.jsp</result>
 			<result name="editSuccess">/admin/categorysecond/edit.jsp</result>
 			<result name="saveSuccess" type="redirectAction">adminCategorySecond_findAll?page=1</result>
